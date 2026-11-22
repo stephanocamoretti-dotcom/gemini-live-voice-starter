@@ -40,7 +40,7 @@ sequenceDiagram
     participant Spk as PcmAudioPlayer (24kHz)
 
     Mic->>App: Bloque Int16 PCM de 100ms (16kHz mono)
-    App->>Live: realtimeInput (audio/pcm;rate=16000)
+    App->>Live: realtimeInput (audio/pcm 16kHz)
     Live-->>App: serverContent.modelTurn (PCM 24kHz)
     App->>Spk: enqueueBase64Pcm()
     Note over Mic,Spk: El usuario interrumpe a mitad de respuesta (Barge-In)
