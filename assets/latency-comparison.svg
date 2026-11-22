@@ -1,0 +1,33 @@
+<svg width="1000" height="360" viewBox="0 0 1000 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="360" rx="16" fill="#0B1120" stroke="#1E293B"/>
+  <text x="48" y="52" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700">
+    Voice Architecture: Cascaded Pipeline vs. Gemini Live Bidirectional PCM
+  </text>
+  <text x="48" y="78" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="14">
+    Eliminating sequential STT -> LLM -> TTS hops removes turn-taking lag and enables natural barge-in.
+  </text>
+
+  <!-- Row 1: Traditional Cascaded Pipeline -->
+  <text x="48" y="136" fill="#CBD5E1" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600">
+    Traditional Cascaded (STT + LLM + TTS)
+  </text>
+  <rect x="48" y="152" width="210" height="44" rx="8" fill="#334155"/>
+  <text x="153" y="179" text-anchor="middle" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">1. STT (~350-500ms)</text>
+
+  <rect x="266" y="152" width="280" height="44" rx="8" fill="#475569"/>
+  <text x="406" y="179" text-anchor="middle" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">2. LLM Reasoning (~600-900ms)</text>
+
+  <rect x="554" y="152" width="230" height="44" rx="8" fill="#64748B"/>
+  <text x="669" y="179" text-anchor="middle" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">3. TTS Synthesis (~400-700ms)</text>
+
+  <text x="805" y="179" fill="#F87171" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">~1,350 - 2,100 ms</text>
+
+  <!-- Row 2: Gemini Live API -->
+  <text x="48" y="242" fill="#38BDF8" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600">
+    Gemini Live API (Native Audio-to-Audio WebSocket)
+  </text>
+  <rect x="48" y="258" width="240" height="44" rx="8" fill="#0284C7"/>
+  <text x="168" y="285" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700">Single Native Audio Stream (PCM)</text>
+
+  <text x="310" y="285" fill="#34D399" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">Sub-second Turn-Taking + Instant Barge-In</text>
+</svg>
